@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://c52aq0ltumfjy"]
+
+[ext_resource type="Texture2D" uid="uid://duiho2quswtu3" path="res://Assets/Towers/KV2Turret.png" id="1"]
+[ext_resource type="Script" path="res://Scenes/Turrets/KV2.gd" id="1_rdwe5"]
+[ext_resource type="Texture2D" uid="uid://b2cgiinkmm2kf" path="res://Assets/Towers/KV2Hull.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cnonrsw6g44fv" path="res://Assets/Effects/towerDefense_tile297.png" id="4_v4olp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4irh0"]
+radius = 20.0
+
+[sub_resource type="Animation" id="Animation_a1l8j"]
+resource_name = "Fire"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Turret/Muzzle/MuzzleFlash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_330m5"]
+_data = {
+"Fire": SubResource("Animation_a1l8j")
+}
+
+[node name="KV2" type="Node2D"]
+rotation = 3.14159
+script = ExtResource("1_rdwe5")
+
+[node name="Hull" type="Sprite2D" parent="."]
+texture = ExtResource("2")
+
+[node name="Turret" type="Sprite2D" parent="."]
+position = Vector2(6, 0)
+texture = ExtResource("1")
+offset = Vector2(6, 0)
+
+[node name="Muzzle" type="Marker2D" parent="Turret"]
+position = Vector2(32, 0)
+
+[node name="MuzzleFlash" type="Sprite2D" parent="Turret/Muzzle"]
+position = Vector2(10, 0)
+rotation = 1.5708
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_v4olp")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_4irh0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_330m5")
+}
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

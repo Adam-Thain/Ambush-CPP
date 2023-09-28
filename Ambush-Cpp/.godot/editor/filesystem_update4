@@ -1,0 +1,4 @@
+res://SceneHandler.tscn
+res://Scenes/MainScenes/GameScene.tscn
+res://Scenes/Maps/Map1.tscn
+res://SceneHandler.gd

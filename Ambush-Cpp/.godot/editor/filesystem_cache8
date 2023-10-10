@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1695858626
+::res://::1696543358
 icon.png::CompressedTexture2D::2633518259320276262::1694638107::1695039544::1::::<><>::
-SceneHandler.gd::GDScript::-1::1695845552::0::1::::<>Node<>::
-SceneHandler.tscn::PackedScene::1903391832028236723::1695858373::0::1::::<><>::res://SceneHandler.gd<>uid://vpbsexcb8c58::::res://Scenes/UIScenes/MainMenu.tscn
+SceneHandler.gd::GDScript::-1::1695859005::0::1::::<>Node<>::
+SceneHandler.tscn::PackedScene::1903391832028236723::1696213290::0::1::::<><>::res://SceneHandler.gd<>uid://vpbsexcb8c58
 ::res://Assets/::1695388051
 ::res://Assets/Effects/::1695311155
 explosion1.png::CompressedTexture2D::7362488520946982550::1695311155::1695311155::1::::<><>::
@@ -11,13 +11,18 @@ explosion3.png::CompressedTexture2D::5891949549161048262::1695311155::1695311155
 explosion4.png::CompressedTexture2D::4005884954299207709::1695311155::1695311155::1::::<><>::
 explosion5.png::CompressedTexture2D::4093541334876021141::1695311155::1695311155::1::::<><>::
 towerDefense_tile297.png::CompressedTexture2D::5715018283463496667::1695308422::1695308422::1::::<><>::
-::res://Assets/Enemies/::1695420851
-E-100.png::CompressedTexture2D::4350616094036300::1695420851::1695420851::1::::<><>::
-Pz.Kpfw.IV-Gpng.png::CompressedTexture2D::6795419629143090719::1695420851::1695420851::1::::<><>::
-Pz.Kpfw.IV.png::CompressedTexture2D::3308613275113862829::1695420851::1695420851::1::::<><>::
+::res://Assets/Enemies/::1696258356
+E100.png::CompressedTexture2D::3683856494252812932::1696212329::1696212351::1::::<><>::
+Pz.Kpfw.IV Hull.png::CompressedTexture2D::653027089678418651::1696257458::1696258356::1::::<><>::
+Pz.Kpfw.IV Turret.png::CompressedTexture2D::1696356066219910999::1696257458::1696258356::1::::<><>::
+PzKpfwIV.png::CompressedTexture2D::8719713408862401170::1696212329::1696212360::1::::<><>::
+PzKpfwIVG.png::CompressedTexture2D::5207264633566841098::1696212329::1696212347::1::::<><>::
 tank_blue.png::CompressedTexture2D::3304354747859553903::1695210451::1695210451::1::::<><>::
-Tiger-II.png::CompressedTexture2D::7047066157105032063::1695420851::1695420851::1::::<><>::
-VK.3601h.png::CompressedTexture2D::1291594079838701616::1695420851::1695420851::1::::<><>::
+Tiger-II Turret.png::CompressedTexture2D::8550797628237454497::1696256988::1696258356::1::::<><>::
+TigerII.png::CompressedTexture2D::3901955476091227051::1696212329::1696212365::1::::<><>::
+VK3601h.png::CompressedTexture2D::6218673625658642235::1696212329::1696212375::1::::<><>::
+VK.3601h Hull.png::CompressedTexture2D::1645815665708626780::1696257191::1696258356::1::::<><>::
+VK.3601h Turret.png::CompressedTexture2D::5837720187532690526::1696257191::1696258356::1::::<><>::
 ::res://Assets/Environment/::1695167035
 ::res://Assets/Environment/Props/::1694643081
 ::res://Assets/Environment/Tilesets/::1695167035
@@ -52,30 +57,40 @@ blue_button12.png::CompressedTexture2D::2884347561552203879::1695050747::1695050
 ::res://Resources/Fonts/::1695854434
 knf_40_o1.tres::FontFile::5106136318071417861::1695056099::0::1::::<><>::
 ::res://Resources/Themes/::1694643598
-::res://Resources/Tilesets/::1695858641
-Ambush Tileset V1.png::CompressedTexture2D::4701709074683217814::1695858641::1695858641::1::::<><>::
+::res://Resources/Tilesets/::1695858688
 ::res://Scenes/::1695818088
-::res://Scenes/Enemies/::1695820039
-BlueTank.gd::GDScript::-1::1695426409::0::1::::<>PathFollow2D<>::
-BlueTank.tscn::PackedScene::9191828004193316178::1695820039::0::1::::<><>::uid://bncwifmana5e6
-::res://Scenes/MainScenes/::1695858373
-GameScene.gd::GDScript::-1::1695846248::0::1::::<>Node2D<>::
-GameScene.tscn::PackedScene::9200860915656362065::1695858373::0::1::::<><>::uid://cyaxu83vhdv1y::::res://Scenes/Maps/Map1.tscn<>res://Scenes/MainScenes/GameScene.gd<>uid://bhdg1vcj7xufv::::res://Assets/UI/Buttons/blue_button12.png<>uid://cxw0sis3jtml4::::res://Assets/Towers/T34Turret.png<>res://Scenes/MainScenes/UI.gd<>uid://qnltjp3rdm2d::::res://Assets/Towers/M6Turret.png<>uid://duiho2quswtu3::::res://Assets/Towers/KV2Turret.png<>uid://cn0vninsg16nl::::res://Assets/Icons/right.png<>uid://dw6vi7qyyqfw3::::res://Assets/Icons/pause.png<>uid://uk6fdgj2fw7v::::res://Assets/Icons/fastForward.png<>uid://ce0pk36t8xy66::::res://Resources/Fonts/knf_40_o1.tres<>uid://yc7870205q7f::::res://Assets/Icons/home.png<>uid://bdwsloyg62ebw::::res://Assets/UI/HPbar.jpg
-UI.gd::GDScript::-1::1695426409::0::1::::<>CanvasLayer<>::
-::res://Scenes/Maps/::1695820039
-Map1.tscn::PackedScene::6458807598899425672::1695820039::0::1::::<><>::uid://c0vkxmeg5ojwt
+::res://Scenes/Enemies/::1696528476
+BlueTank.gd::GDScript::-1::1695904528::0::1::::<>PathFollow2D<>::
+BlueTank.tscn::PackedScene::9191828004193316178::1696258594::0::1::::<><>::uid://bncwifmana5e6
+E100.gd::GDScript::-1::1696213256::0::1::::<>PathFollow2D<>::
+E100.tscn::PackedScene::5631477963525772553::1696517246::0::1::::<><>::res://Scenes/Enemies/E100.gd<>uid://bsqqtwph3mimm
+EnemyTanks.gd::GDScript::-1::1696528476::0::1::::<>PathFollow2D<>::
+PzKpfwIV.gd::GDScript::-1::1695899890::0::1::::<>PathFollow2D<>::
+PzKpfwIV.tscn::PackedScene::1873762233855917834::1696517247::0::1::::<><>::res://Scenes/Enemies/PzKpfwIV.gd<>uid://dwh5n2gvicn2y
+PzKpfwIVG.gd::GDScript::-1::1696212654::0::1::::<>PathFollow2D<>::
+PzKpfwIVG.tscn::PackedScene::1712172870739339139::1696517247::0::1::::<><>::res://Scenes/Enemies/PzKpfwIVG.gd<>uid://cggo5ghdqucys
+TigerII.gd::GDScript::-1::1696213060::0::1::::<>PathFollow2D<>::
+TigerII.tscn::PackedScene::7372117755912872470::1696517247::0::1::::<><>::res://Scenes/Enemies/TigerII.gd<>uid://bvuevv6iyis8b
+VK3601H.gd::GDScript::-1::1696212834::0::1::::<>PathFollow2D<>::
+VK3601H.tscn::PackedScene::8219246024048106297::1696517246::0::1::::<><>::res://Scenes/Enemies/VK3601H.gd<>uid://cuumv73stlg4b
+::res://Scenes/MainScenes/::1696529040
+GameScene.gd::GDScript::-1::1696529008::0::1::::<>Node2D<>::
+GameScene.tscn::PackedScene::9200860915656362065::1696529040::0::1::::<><>::uid://cyaxu83vhdv1y::::res://Scenes/Maps/Map1.tscn<>res://Scenes/MainScenes/GameScene.gd<>uid://bhdg1vcj7xufv::::res://Assets/UI/Buttons/blue_button12.png<>uid://cxw0sis3jtml4::::res://Assets/Towers/T34Turret.png<>res://Scenes/MainScenes/UI.gd<>uid://qnltjp3rdm2d::::res://Assets/Towers/M6Turret.png<>uid://duiho2quswtu3::::res://Assets/Towers/KV2Turret.png<>uid://cn0vninsg16nl::::res://Assets/Icons/right.png<>uid://dw6vi7qyyqfw3::::res://Assets/Icons/pause.png<>uid://uk6fdgj2fw7v::::res://Assets/Icons/fastForward.png<>uid://ce0pk36t8xy66::::res://Resources/Fonts/knf_40_o1.tres<>uid://yc7870205q7f::::res://Assets/Icons/home.png<>uid://bdwsloyg62ebw::::res://Assets/UI/HPbar.jpg
+UI.gd::GDScript::-1::1696523765::0::1::::<>CanvasLayer<>::
+::res://Scenes/Maps/::1696517246
+Map1.tscn::PackedScene::6458807598899425672::1696517246::0::1::::<><>::uid://6mq00nyifvaa
 ::res://Scenes/SupportScenes/::1695820040
 ProjectileImpact.gd::GDScript::-1::1695426409::0::1::::<>AnimatedSprite2D<>::
 ProjectileImpact.tscn::PackedScene::5174745688886802779::1695820040::0::1::::<><>::uid://dc5pd0p6yft87
-::res://Scenes/Turrets/::1695852156
+::res://Scenes/Turrets/::1696469049
 KV2.gd::GDScript::-1::1695251368::0::1::::<>Node2D<>::
-KV2.tscn::PackedScene::6934274779556345630::1695852156::0::1::::<><>::uid://duiho2quswtu3
+KV2.tscn::PackedScene::6934274779556345630::1695900022::0::1::::<><>::uid://duiho2quswtu3
 M6.gd::GDScript::-1::1695251139::0::1::::<>Node2D<>::
-M6.tscn::PackedScene::9137935846823070181::1695833310::0::1::::<><>::uid://0hkut4ld3it
+M6.tscn::PackedScene::9137935846823070181::1695900022::0::1::::<><>::uid://0hkut4ld3it
 T34.gd::GDScript::-1::1695250547::0::1::::<>Node2D<>::
-T34.tscn::PackedScene::425138888520162657::1695833308::0::1::::<><>::uid://cvrb3dio1m7vu
-Turrets.gd::GDScript::-1::1695812744::0::1::::<>Node2D<>::
+T34.tscn::PackedScene::425138888520162657::1695900022::0::1::::<><>::uid://cvrb3dio1m7vu
+Turrets.gd::GDScript::-1::1696469049::0::1::::<>Node2D<>::
 ::res://Scenes/UIScenes/::1695658967
 MainMenu.tscn::PackedScene::1505024489710041021::1695658967::0::1::::<><>::uid://g8npecswqrto
-::res://Singletons/::1695407457
-GameData.gd::GDScript::-1::1695407457::0::1::::<>Node<>::
+::res://Singletons/::1696523840
+GameData.gd::GDScript::-1::1696523840::0::1::::<>Node<>::

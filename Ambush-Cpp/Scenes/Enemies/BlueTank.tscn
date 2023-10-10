@@ -13,15 +13,17 @@ script = ExtResource("1_fl5gr")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_a4ndc")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_rwmad")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_a4ndc")
-
 [node name="HealthBar" type="TextureProgressBar" parent="."]
-offset_right = 60.0
-offset_bottom = 6.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = -24.0
 value = 50.0
 nine_patch_stretch = true
 texture_under = ExtResource("3_aavwp")

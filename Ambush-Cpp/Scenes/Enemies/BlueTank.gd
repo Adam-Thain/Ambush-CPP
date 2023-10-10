@@ -31,7 +31,13 @@ func move(delta):
 func on_hit(damage):
 	impact()
 	hp -= damage
-	health_bar.value = hp
+	health_bar.value = hp	
+	if hp >= 25:
+		health_bar.set_tint_progress("4eff15")
+	elif hp <= 25 and hp >= 15:
+		health_bar.set_tint_progress("e1be32")
+	else:
+		health_bar.set_tint_progress("e11e1e")
 	if hp <= 0:
 		on_destroy()
 

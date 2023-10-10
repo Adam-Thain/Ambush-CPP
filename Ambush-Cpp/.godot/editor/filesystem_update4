@@ -1,4 +1,5 @@
-res://SceneHandler.tscn
 res://Scenes/MainScenes/GameScene.tscn
-res://Scenes/Maps/Map1.tscn
-res://SceneHandler.gd
+res://Scenes/Enemies/EnemyTanks.gd
+res://Scenes/MainScenes/GameScene.gd
+res://Singletons/GameData.gd
+res://Scenes/MainScenes/UI.gd

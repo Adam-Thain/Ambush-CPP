@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://1xwuckpvkh03"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/PzKpfwIV.gd" id="1_6qere"]
+[ext_resource type="Texture2D" uid="uid://dwh5n2gvicn2y" path="res://Assets/Enemies/PzKpfwIV.png" id="2_kqmdd"]
+[ext_resource type="Texture2D" uid="uid://bdwsloyg62ebw" path="res://Assets/UI/HPbar.jpg" id="3_5vguc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwmad"]
+size = Vector2(62, 30)
+
+[node name="PzKpfwIV" type="PathFollow2D"]
+loop = false
+script = ExtResource("1_6qere")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_kqmdd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_rwmad")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = -24.0
+value = 50.0
+nine_patch_stretch = true
+texture_under = ExtResource("3_5vguc")
+texture_progress = ExtResource("3_5vguc")
+tint_under = Color(0.207843, 0.207843, 0.207843, 1)
+tint_progress = Color(0, 0.772549, 0, 1)
+
+[node name="Impact" type="Marker2D" parent="."]
+position = Vector2(-15, -15)

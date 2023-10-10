@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var hp_bar = get_node("HUD/InfoBar/H/HP")
+@onready var money = get_node("HUD/InfoBar/H/Money")
 
 func set_tower_preview(tower_type, mouse_position):
 	var drag_tower = load("res://Scenes/Turrets/" + tower_type + ".tscn").instantiate()
@@ -14,7 +15,6 @@ func set_tower_preview(tower_type, mouse_position):
 	var texture = load("res://Assets/UI/range_overlay.png");
 	range_texture.texture = texture;
 	range_texture.modulate = Color("00ff00")
-	
 	
 	var control = Control.new()
 	control.add_child(drag_tower, true)
@@ -64,3 +64,7 @@ func update_health_bar(base_health):
 		hp_bar.set_tint_progress("e1be32")
 	else:
 		hp_bar.set_tint_progress("e11e1e")
+
+func update_money(amount):
+	GameData.player_data["Money"] += amount
+	print(GameData.player_data["Money"])

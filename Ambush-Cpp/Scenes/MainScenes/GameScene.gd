@@ -39,7 +39,7 @@ func start_next_wave():
 	spawn_enemies(wave_data)
 
 func retrieve_wave_data():
-	var wave_data = [["BlueTank",1.0],["BlueTank",1.0],["BlueTank",1.0],["BlueTank",1.0],["BlueTank",1.0]]
+	var wave_data = GameData.wave_data[current_wave]["wave"]
 	current_wave += 1
 	enemies_in_wave = wave_data.size()
 	return wave_data
@@ -48,6 +48,8 @@ func spawn_enemies(wave_data):
 	for i in wave_data:
 		var new_enemy = load("res://Scenes/Enemies/" + i[0] + ".tscn").instantiate()
 		new_enemy.connect("damage_base", Callable(self, "on_base_damage"))
+		new_enemy.connect("destroyed", Callable(self, "on_enemy_destroyed"))
+		new_enemy.type = i[0]
 		map_node.get_node("Path").add_child(new_enemy, true)
 		await(get_tree().create_timer(i[1]).timeout)
 
@@ -89,6 +91,7 @@ func verify_and_build():
 		new_tower.category = GameData.tower_data[build_type]["category"]
 		map_node.get_node("Turrets").add_child(new_tower, true)
 		map_node.get_node("TowerExclusion").set_cell(0,build_tile,1,Vector2i(1,0))
+		GameData.player_data["Money"] -= GameData.tower_data[build_type]["cost"]
 
 func on_base_damage(damage):
 	base_health -= damage
@@ -96,3 +99,8 @@ func on_base_damage(damage):
 		emit_signal("game_finished", false)
 	else: 
 		get_node("UI").update_health_bar(base_health)
+
+func on_enemy_destroyed(money):
+	if enemies_in_wave > 0:
+		enemies_in_wave -= 1
+		get_node("UI").update_money(money)

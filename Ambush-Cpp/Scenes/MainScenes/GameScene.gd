@@ -10,7 +10,8 @@ var build_location
 var build_type
 
 var current_wave = 0
-var enemies_in_wave = 0
+var enemies_remaining= 0
+var wave_spawned = false
 
 var base_health = 100
 
@@ -40,11 +41,12 @@ func start_next_wave():
 
 func retrieve_wave_data():
 	var wave_data = GameData.wave_data[current_wave]["wave"]
-	current_wave += 1
-	enemies_in_wave = wave_data.size()
+	enemies_remaining = wave_data.size()
 	return wave_data
 
 func spawn_enemies(wave_data):
+	wave_spawned = true
+	
 	for i in wave_data:
 		var new_enemy = load("res://Scenes/Enemies/" + i[0] + ".tscn").instantiate()
 		new_enemy.connect("damage_base", Callable(self, "on_base_damage"))
@@ -59,6 +61,8 @@ func spawn_enemies(wave_data):
 func initiate_build_mode(tower_type):
 	if build_mode:
 		cancel_build_mode()
+	if(GameData.tower_data[tower_type]["cost"] > GameData.player_data["Money"]):
+		return
 	build_type = tower_type
 	build_mode = true
 	get_node("UI").set_tower_preview(build_type,get_global_mouse_position())
@@ -91,7 +95,7 @@ func verify_and_build():
 		new_tower.category = GameData.tower_data[build_type]["category"]
 		map_node.get_node("Turrets").add_child(new_tower, true)
 		map_node.get_node("TowerExclusion").set_cell(0,build_tile,1,Vector2i(1,0))
-		GameData.player_data["Money"] -= GameData.tower_data[build_type]["cost"]
+		get_node("UI").subtract_money(GameData.tower_data[build_type]["cost"], new_tower.position)
 
 func on_base_damage(damage):
 	base_health -= damage
@@ -100,7 +104,9 @@ func on_base_damage(damage):
 	else: 
 		get_node("UI").update_health_bar(base_health)
 
-func on_enemy_destroyed(money):
-	if enemies_in_wave > 0:
-		enemies_in_wave -= 1
-		get_node("UI").update_money(money)
+func on_enemy_destroyed(money,pos):
+	if enemies_remaining > 0:
+		enemies_remaining -= 1
+		get_node("UI").add_money(money,pos)
+		if(enemies_remaining <= 0 && wave_spawned):
+			get_node("UI").wave_complete()

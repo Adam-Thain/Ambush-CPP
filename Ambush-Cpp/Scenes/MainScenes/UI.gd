@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var hp_bar = get_node("HUD/InfoBar/H/HP")
 @onready var money = get_node("HUD/InfoBar/H/Money")
+@onready var floating_text = preload("res://Scenes/UIScenes/FloatingText.tscn")
 
 func set_tower_preview(tower_type, mouse_position):
 	var drag_tower = load("res://Scenes/Turrets/" + tower_type + ".tscn").instantiate()
@@ -38,7 +39,7 @@ func _on_pause_play_pressed():
 		get_parent().cancel_build_mode()
 	if get_tree().is_paused():
 		get_tree().paused = false
-	elif get_parent().current_wave == 0:
+	elif get_parent().wave_spawned == false:
 		get_parent().current_wave += 1
 		get_parent().start_next_wave()
 	else:
@@ -65,6 +66,19 @@ func update_health_bar(base_health):
 	else:
 		hp_bar.set_tint_progress("e11e1e")
 
-func update_money(amount):
+func add_money(amount, position):
+	var text = floating_text.instantiate()
+	add_child(text)
+	text.set_values_and_animate(amount,"Gain",position,50)
 	GameData.player_data["Money"] += amount
-	print(GameData.player_data["Money"])
+	money.set_text(str(GameData.player_data["Money"]))
+
+func subtract_money(amount, position):
+	var text = floating_text.instantiate()
+	add_child(text)
+	text.set_values_and_animate(amount,"Spend",position,50)
+	GameData.player_data["Money"] -= amount
+	money.set_text(str(GameData.player_data["Money"]))
+
+func wave_complete():
+	get_parent().wave_spawned = false

@@ -3,15 +3,15 @@ extends PathFollow2D
 signal damage_base(damage)
 signal destroyed()
 
+@onready var health_bar = get_node("HealthBar")
+@onready var impact_area = get_node("Impact")
+
+var projectile_impact = preload("res://Scenes/SupportScenes/ProjectileImpact.tscn")
 var type
 var speed
 var hp
 var base_damage
 var money
-
-@onready var health_bar = get_node("HealthBar")
-@onready var impact_area = get_node("Impact")
-var projectile_impact = preload("res://Scenes/SupportScenes/ProjectileImpact.tscn")
 
 func _ready():	
 	speed = GameData.enemy_data[type]["speed"]
@@ -46,7 +46,7 @@ func on_hit(damage):
 		health_bar.set_tint_progress("e11e1e")
 	if hp <= 0:
 		on_destroy()
-		emit_signal("destroyed", money)
+		emit_signal("destroyed", money, position)
 
 func impact():
 	randomize()

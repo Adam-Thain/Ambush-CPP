@@ -30,31 +30,31 @@ var enemy_data = {
 		"speed" = 150,
 		"hp" = 50,
 		"base_damage" = 20,
-		"money" = 10,
+		"money" = 25,
 	},
 	"PzKpfwIVG": {
-		"speed" = 150,
+		"speed" = 130,
 		"hp" = 50,
 		"base_damage" = 20,
-		"money" = 15,
+		"money" = 35,
 	},
 	"VK3601H": {
-		"speed" = 150,
-		"hp" = 50,
-		"base_damage" = 20,
-		"money" = 20,
-	},
-	"TigerII": {
-		"speed" = 150,
+		"speed" = 110,
 		"hp" = 50,
 		"base_damage" = 20,
 		"money" = 50,
 	},
-	"E100": {
-		"speed" = 150,
+	"TigerII": {
+		"speed" = 100,
 		"hp" = 50,
 		"base_damage" = 20,
 		"money" = 100,
+	},
+	"E100": {
+		"speed" = 80,
+		"hp" = 50,
+		"base_damage" = 20,
+		"money" = 200,
 	}}
 
 var wave_data = {
@@ -62,4 +62,5 @@ var wave_data = {
 	2: {wave = [["PzKpfwIVG",1.0],["PzKpfwIVG",1.0],["PzKpfwIVG",1.0],["PzKpfwIVG",1.0],["PzKpfwIVG",1.0]]},
 	3: {wave = [["VK3601H",1.0],["VK3601H",1.0],["VK3601H",1.0],["VK3601H",1.0],["VK3601H",1.0]]},
 	4: {wave = [["TigerII",1.0],["TigerII",1.0],["TigerII",1.0],["TigerII",1.0],["TigerII",1.0]]},
-	5: {wave = [["E100",1.0],["E100",1.0],["E100",1.0],["E100",1.0],["E100",1.0]]}}
+	5: {wave = [["E100",1.0],["E100",1.0],["E100",1.0],["E100",1.0],["E100",1.0]]}
+}

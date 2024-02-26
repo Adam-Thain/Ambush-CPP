@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpteir6xap7tg"]
+
+[ext_resource type="Texture2D" uid="uid://cgge4qoswlgev" path="res://Assets/UI/Buttons/blue_button03.png" id="1_o5iqn"]
+[ext_resource type="Script" path="res://Scenes/UIScenes/PauseMenu.gd" id="1_w0ye0"]
+[ext_resource type="Texture2D" uid="uid://bhq1aknewlirm" path="res://Assets/UI/Buttons/blue_button05.png" id="2_rb0pp"]
+[ext_resource type="FontFile" uid="uid://x38pvt6ow7n2" path="res://Assets/Fonts/Kenney Future Narrow.ttf" id="3_64o1c"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w0ye0")
+
+[node name="P" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VB" type="VBoxContainer" parent="P"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="Resume" type="TextureButton" parent="P/VB"]
+custom_minimum_size = Vector2(350, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_o5iqn")
+texture_pressed = ExtResource("2_rb0pp")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="P/VB/Resume"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.5
+offset_bottom = 1.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.705882)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.235294)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_64o1c")
+theme_override_font_sizes/font_size = 40
+text = "Resume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="TextureButton" parent="P/VB"]
+custom_minimum_size = Vector2(350, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_o5iqn")
+texture_pressed = ExtResource("2_rb0pp")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="P/VB/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.5
+offset_bottom = 1.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.705882)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.235294)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_64o1c")
+theme_override_font_sizes/font_size = 40
+text = "Settings
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="P/VB"]
+custom_minimum_size = Vector2(350, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_o5iqn")
+texture_pressed = ExtResource("2_rb0pp")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="P/VB/Quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.705882)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.235294)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_64o1c")
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
